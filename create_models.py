@@ -29,10 +29,10 @@ def create_squeezeNet_v1_1(input,num_classes):
     # Dropout
     network = dropout(network, 0.5)
     # Conv10
-    network = conv_2d(network, num_classes, 1)
+    network = conv_2d(network, num_classes, 1, activation='relu')
     # AVG 1
     network = global_avg_pool(network)
 
-    network = regression(network, optimizer='adam',loss='softmax_categorical_crossentropy',learning_rate=0.001)
+    network = regression(network, optimizer='adam',loss='softmax_categorical_crossentropy',learning_rate=0.0001)
 
     return network

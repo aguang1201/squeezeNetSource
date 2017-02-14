@@ -1,1 +1,1 @@
-Squeeze Net
+tflearn implementation of Squeeze Net
